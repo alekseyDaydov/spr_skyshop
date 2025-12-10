@@ -58,5 +58,4 @@ public class StorageService {
         articleMap.put(earth.getId(), earth);
         articleMap.put(apple.getId(), apple);
     }
-
 }

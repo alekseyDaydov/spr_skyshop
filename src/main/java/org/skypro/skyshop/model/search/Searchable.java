@@ -14,5 +14,4 @@ public interface Searchable {
     default String getStringRepresentation() {
         return getName() + " - " + getContent();
     }
-
 }

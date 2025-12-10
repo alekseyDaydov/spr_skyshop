@@ -28,6 +28,5 @@ public class SearchService {
                 .filter(element -> element.searchTerm().contains(findText))
                 .map(element -> SearchResult.fromSearchable(element))
                 .collect(Collectors.toList());
-
     }
 }
