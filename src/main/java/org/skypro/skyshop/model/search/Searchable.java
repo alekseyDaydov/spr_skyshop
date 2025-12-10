@@ -10,6 +10,7 @@ public interface Searchable {
     String getName();
 
     UUID getId();
+
     default String getStringRepresentation() {
         return getName() + " - " + getContent();
     }

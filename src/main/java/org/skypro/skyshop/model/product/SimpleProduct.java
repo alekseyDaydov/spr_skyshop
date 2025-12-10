@@ -7,14 +7,13 @@ public class SimpleProduct extends Product {
     private final int price;
     private final UUID id;
 
-    public SimpleProduct(UUID id, String name, int amount ) {
+    public SimpleProduct(UUID id, String name, int amount) {
         super(name);
         this.id = id;
         if (amount < 1) {
             throw new IllegalArgumentException("Цена должна быть больше 0");
         }
         this.price = amount;
-
     }
 
     @Override

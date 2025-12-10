@@ -16,7 +16,6 @@ public final class Article implements Searchable {
         this.id = id;
         this.title = title;
         this.text = text;
-
     }
 
     public String getTitle() {
@@ -27,11 +26,13 @@ public final class Article implements Searchable {
     public String toString() {
         return title + '\n' + text;
     }
-@JsonIgnore
+
+    @JsonIgnore
     @Override
     public String searchTerm() {
         return toString();
     }
+
     @JsonIgnore
     @Override
     public String getContent() {
