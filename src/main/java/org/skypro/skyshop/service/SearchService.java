@@ -25,7 +25,7 @@ public class SearchService {
     public Collection<SearchResult> search(String findText) {
         return getSearchable().stream()
                 .filter(Objects::nonNull)
-                .filter(element -> element.searchTerm().contains(findText))
+                .filter(element -> element.getSearchTerm().contains(findText))
                 .map(element -> SearchResult.fromSearchable(element))
                 .collect(Collectors.toList());
     }
