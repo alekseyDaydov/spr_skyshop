@@ -8,7 +8,7 @@ import java.util.UUID;
 
 
 public abstract class Product implements Searchable {
-    private final String TERM_PRODUCT = "PRODUCT";
+    private final static String TERM_PRODUCT = "PRODUCT";
 
     private final UUID id;
     private final String name;

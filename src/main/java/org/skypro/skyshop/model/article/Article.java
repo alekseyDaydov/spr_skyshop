@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public final class Article implements Searchable {
-    private final String TERM_ARTICLE = "ARTICLE";
+    private final static String TERM_ARTICLE = "ARTICLE";
 
     private final String title;
     private final String text;
