@@ -1,0 +1,32 @@
+package org.skypro.skyshop.service;
+
+import org.skypro.skyshop.model.search.SearchResult;
+import org.skypro.skyshop.model.search.Searchable;
+import org.springframework.stereotype.Service;
+
+import java.util.Collection;
+import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+@Service
+public class SearchService {
+    private final StorageService storageService;
+
+    public SearchService(StorageService storageService) {
+        this.storageService = storageService;
+    }
+
+    public Collection<Searchable> getSearchable() {
+        return Stream.concat(storageService.getAllArticle().stream(), storageService.getAllProduct().stream())
+                .collect(Collectors.toList());
+    }
+
+    public Collection<SearchResult> search(String findText) {
+        return getSearchable().stream()
+                .filter(Objects::nonNull)
+                .filter(element -> element.getSearchTerm().contains(findText))
+                .map(element -> SearchResult.fromSearchable(element))
+                .collect(Collectors.toList());
+    }
+}
