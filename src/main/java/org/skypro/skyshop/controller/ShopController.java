@@ -51,7 +51,6 @@ public class ShopController {
 
     @GetMapping("/basket")
     public UserBasket getUserBasket() {
-        System.out.println("pfikb d vtnjl");
         return basketService.getUserBasket();
     }
 }
