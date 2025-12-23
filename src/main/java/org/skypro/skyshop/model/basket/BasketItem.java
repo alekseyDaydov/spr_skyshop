@@ -3,8 +3,8 @@ package org.skypro.skyshop.model.basket;
 import org.skypro.skyshop.model.product.Product;
 
 public final class BasketItem {
-    private  Product product;
-    private  Integer count;
+    private final Product product;
+    private final Integer count;
 
     public BasketItem(Product product, Integer count) {
         this.product = product;
@@ -15,15 +15,8 @@ public final class BasketItem {
         return product;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
     public Integer getCount() {
         return count;
     }
 
-    public void setInr(Integer count) {
-        this.count = count;
-    }
 }
