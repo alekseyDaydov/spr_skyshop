@@ -27,6 +27,10 @@ public class StorageService {
         return new ArrayList<>(articleMap.values());
     }
 
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(productMap.get(id));
+    }
+
     private void addProduct() {
         Product sausage = new SimpleProduct(UUID.randomUUID(), "Колбаса", 20);
         Product bread = new SimpleProduct(UUID.randomUUID(), "Хлеб", 6);
