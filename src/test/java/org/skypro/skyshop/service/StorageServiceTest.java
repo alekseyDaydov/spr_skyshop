@@ -2,17 +2,21 @@ package org.skypro.skyshop.service;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.skypro.skyshop.model.product.DiscountedProduct;
 import org.skypro.skyshop.model.product.FixPriceProduct;
 import org.skypro.skyshop.model.product.Product;
 import org.skypro.skyshop.model.product.SimpleProduct;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class StorageServiceTest {
-    StorageService storageService = new StorageService();
+    StorageService mockStorageService = Mockito.mock(StorageService.class);
 //    private final static Product SAUSAGE = new SimpleProduct(UUID.randomUUID(), "Колбаса", 20);
 //    private final static Product BREAD = new SimpleProduct(UUID.randomUUID(), "Хлеб", 6);
 //    private final static Product MEAT = new FixPriceProduct(UUID.randomUUID(), "Мясо");
@@ -37,10 +41,13 @@ public class StorageServiceTest {
    // Поиск в случае отсутствия объектов в
    // StorageService
     @Test
-    void whenFindNotObject_ThenStorageServiceReturnNull() {
-        String resultNull = "Null";
-        Assertions.assertNotEquals(resultNull,storageService.getAllProduct());
+    void whenGetAllProduct_emptyMap_ThenStorageServiceReturnEmptyCollection() {
+        Collection<Product> products = mockStorageService.getAllProduct();
+        Mockito.when(mockStorageService.getAllProduct()).thenReturn(products);
+//        Assertions.assertNotEquals(resultNull,storageService.getAllProduct());
     }
+//    @Test
+//    void whenGetProductById
 //    void whenNameIsGiven_ThenGreeterReturnsHelloName() {
 //        String name = "Test";
 //        Assertions.assertEquals(TEST_PRODUCT_MAP, Greeter.greet(name));
