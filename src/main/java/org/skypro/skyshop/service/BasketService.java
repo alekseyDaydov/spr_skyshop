@@ -17,7 +17,7 @@ import java.util.UUID;
 @Service
 public class BasketService {
     private final ProductBasket productBasket;
-    private  final StorageService storageService;
+    private final StorageService storageService;
 
     public BasketService(ProductBasket productBasket, StorageService storageService) {
         this.productBasket = productBasket;
